@@ -20,6 +20,7 @@ const Header = () => {
                         <Nav.Link as={Link} to="/home#home">Home</Nav.Link>
                         <Nav.Link as={Link} to="/home#services">Services</Nav.Link>
                         <Nav.Link as={Link} to="/lab-service">Lab-Service</Nav.Link>
+                        <Nav.Link as={Link} to="/doctors">Doctors</Nav.Link>
                         <Nav.Link as={Link} to="/appointment">Appointment</Nav.Link>
                         <Nav.Link as={Link} to="/about">About Us</Nav.Link>
                         {user.email ? <button onClick={handleLogOut}>Logout</button> :

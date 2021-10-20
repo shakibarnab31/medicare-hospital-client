@@ -10,6 +10,8 @@ import ServiceDetails from './pages/Home/ServiceDetails/ServiceDetails';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Appointment from './pages/Appointment/Appointment';
+import Doctors from './pages/Doctors/Doctors/Doctors';
+
 
 function App() {
   return (
@@ -30,6 +32,10 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
+            <Route path="/doctors">
+              <Doctors></Doctors>
+            </Route>
+            <Route path="/labtest"></Route>
             <PrivateRoute path="/appointment">
               <Appointment></Appointment>
             </PrivateRoute>

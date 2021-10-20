@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import Service from '../Service/Service';
 import './Services.css'
 
@@ -12,12 +12,14 @@ const Services = () => {
     }, [])
     return (
         <>
-            <h3 className="m-5">Medical Services</h3>
-            <Row xs={1} md={3} className=" g-5 mx-5 ">
-                {services.map(service => <Service
-                    key={service.id}
-                    service={service}></Service>)}
-            </Row>
+            <Container>
+                <h3 className="m-5">Medical Services</h3>
+                <Row xs={1} md={3} className=" g-5 mx-5 ">
+                    {services.map(service => <Service
+                        key={service.id}
+                        service={service}></Service>)}
+                </Row>
+            </Container>
         </>
     );
 };

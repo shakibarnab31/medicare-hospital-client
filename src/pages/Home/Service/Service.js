@@ -15,7 +15,7 @@ const Service = (props) => {
                     <Card.Body className="text-start">
                         <Card.Title> <h3>{name}</h3> </Card.Title>
                         <Card.Text>
-                            <p> {descripton.slice(0, 199)}...</p>
+                            <p> {descripton.slice(0, 150)}...</p>
                         </Card.Text>
                         <Link to={`/serviceDetails/${id}`}><button className="btn-info">Details</button>
                         </Link>
