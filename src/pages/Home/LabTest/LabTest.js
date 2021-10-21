@@ -15,7 +15,9 @@ const LabTest = () => {
             <Container>
                 <h3 className="my-5">Our Lab Services</h3>
                 <Row xs={1} md={4} lg={4} className="g-4 mb-5">
-                    {labTest.map(lab => <Lab lab={lab}></Lab>)}
+                    {labTest.map(lab => <Lab
+                        key={lab.id}
+                        lab={lab}></Lab>)}
                 </Row>
             </Container>
 
