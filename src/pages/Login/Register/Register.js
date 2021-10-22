@@ -1,6 +1,7 @@
 import React, { useReducer, useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
+import { Form, Button } from 'react-bootstrap';
 
 const Register = () => {
     const [email, setEmail] = useState('');
@@ -30,7 +31,7 @@ const Register = () => {
             })
             .finally(() => setIsLoading(false))
 
-        
+
 
 
         e.target.reset()
@@ -47,18 +48,32 @@ const Register = () => {
     }
     return (
         <div>
-            <h3>Please Register</h3>
-            <form onSubmit={handleRegistration} >
-                <input onBlur={handleName} type="name" name="name" id="" placeholder="enter name" required />
-                <br />
-                <input onBlur={handleEmail} type="email" name="email" id="" placeholder="enter email" required/>
-                <br />
-                <input onBlur={handlePassword} type="password" name="password" id="" placeholder="enter password" required/>
-                <br />
-                <input type="submit" value="Register" />
-                <p>{error}</p>
-                
-            </form>
+            <h2 className="text-white mb-5">Please Register</h2>
+
+            <Form onSubmit={handleRegistration}>
+                <Form.Group className="mb-3" controlId="formBasicName">
+
+                    <Form.Control
+                        onBlur={handleName}
+                        type="name" placeholder="Enter Name" required />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+
+                    <Form.Control
+                        onBlur={handleEmail}
+                        type="email" placeholder="Enter email" required />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Control
+                        onBlur={handlePassword}
+                        type="password" placeholder="Password" required />
+                </Form.Group>
+                <Button className="w-100"
+                    variant="danger"
+                    type="submit">Register</Button>
+
+            </Form>
         </div>
     );
 };

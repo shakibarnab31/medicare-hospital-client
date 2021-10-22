@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import welcomImg from '../../../images/welcome/dr-image.jpg'
 
+
 const Welcome = () => {
     return (
         <>

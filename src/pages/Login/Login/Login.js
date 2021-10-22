@@ -1,10 +1,13 @@
 import { signInWithEmailAndPassword } from '@firebase/auth';
 import React, { useState } from 'react';
-import { Col, Container, Row, Form } from 'react-bootstrap';
+import { Col, Container, Row, Form, Button } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 import Register from '../Register/Register';
+import './Login.css'
+
+
 
 
 const Login = () => {
@@ -58,42 +61,55 @@ const Login = () => {
 
 
     return (
-        <>
-            <Container>
-                <Row>
-                    <Col>
-                        {toggle ?
+        <div className="login" >
+            <Container >
+                <Row >
+                    <Col className="mx-auto my-5 " md={6} lg={6} sm={12}>
 
-                            <div>
-                                <h2>Please Login</h2>
-                                <form onSubmit={handleLoginWithEmail}>
-                                    <input onBlur={handleEmail} type="email" name="email" id="" placeholder="enter email" />
-                                    <br />
-                                    <input onBlur={handlePassword} type="password" name="" id="" placeholder="enter password" />
-                                    <br />
-                                    <input type="submit" value="login" />
-                                    <p className="text-danger">{error}</p>
-                                </form>
-                            </div>
+                        <div>
+                            {toggle ?
+
+                                <div>
+                                    <h2 className="text-white mb-5">Please Login</h2>
+
+                                    <Form onSubmit={handleLoginWithEmail}>
+                                        <Form.Group className="mb-3" controlId="formBasicEmail">
+
+                                            <Form.Control
+                                                onBlur={handleEmail}
+                                                type="email" placeholder="Enter email" required />
+                                        </Form.Group>
+
+                                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                                            <Form.Control
+                                                onBlur={handlePassword}
+                                                type="password" placeholder="Password" required />
+                                        </Form.Group>
+                                        <Button className="w-100"
+                                            variant="danger"
+                                            type="submit">Login</Button>
+
+                                    </Form>
+                                </div>
 
 
-                            : <Register></Register>}
-                    </Col>
-                    <Col>
+                                : <Register></Register>}
+                            {toggle && <h4 className="my-3 text-white">or</h4>}
+
+                            {toggle && <Button onClick={handleSignInWithGoogle} className="btn-warning w-100">Signin With Google</Button>}
+
+                            {toggle ? <div className="mt-4"><p className="text-start text-white">New to Medicare? <Button onClick={() => setToggle(false)} className="btn-success ">Please Register</Button></p></div> :
+                                <div className="mt-4">  <p className="text-start text-white">Already have an Acount? <Button className="btn-warning " onClick={() => setToggle(true)}>Please login</Button></p></div>}
+                        </div>
 
 
 
-                        {toggle ? <p>New to Medicare? <button onClick={() => setToggle(false)} className="btn-success">Please Register</button></p> :
-                            <p>Already have an Acount? <button className="btn-info" onClick={() => setToggle(true)}>Please login</button></p>}
 
-
-
-                        <button onClick={handleSignInWithGoogle} className="btn-warning">Signin With Google</button>
                     </Col>
                 </Row>
             </Container>
 
-        </>
+        </div>
     );
 };
 
