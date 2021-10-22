@@ -25,6 +25,7 @@ const Register = () => {
                 window.location.reload()
 
 
+
             })
             .catch(error => {
                 setError(error.message)
@@ -74,6 +75,8 @@ const Register = () => {
                     type="submit">Register</Button>
 
             </Form>
+            {error && <h4 className="text-white mt-4">Error: <span className="text-danger">{error}</span>
+            </h4>}
         </div>
     );
 };

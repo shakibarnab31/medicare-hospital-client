@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardGroup, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, CardGroup, Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 const ServiceDetails = () => {
@@ -18,16 +19,16 @@ const ServiceDetails = () => {
 
 
     const found = serviceDetails?.filter(sd => sd.id == serviceId)
-    console.log(found)
+
     return (
         <>
-            <Container>
-                <Row>
-                    <Col md={8} lg={8} sm={12} className="my-5">
+            <Container >
+                <Row className="mx-auto" >
+                    <Col md={12} lg={12} sm={12} className="my-5">
                         <img className="w-100" src={found[0]?.details_img} alt="" />
                         <h3 className="my-4">{found[0]?.name}</h3>
                         <p>{found[0]?.descripton}</p>
-
+                        <Link to="/appointment"><Button>Make Appointment</Button></Link>
                         <h3 className="my-4">Speciallist</h3>
                         <CardGroup>
                             <Card>
@@ -62,7 +63,7 @@ const ServiceDetails = () => {
                             </Card>
                         </CardGroup>
                     </Col>
-                    <Col md={4} lg={4} sm={0} className="mt-5"></Col>
+
                 </Row>
 
 

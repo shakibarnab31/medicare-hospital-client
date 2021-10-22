@@ -37,9 +37,9 @@ const Login = () => {
         e.preventDefault();
         loginUsingEmailAndPassword(email, password)
             .then(result => {
-                console.log(result.user)
+
                 history.push(redirect_uri)
-                console.log(result.user)
+
                 setUser(result.user)
                 setError('')
 
@@ -90,6 +90,8 @@ const Login = () => {
                                             type="submit">Login</Button>
 
                                     </Form>
+                                    {error && <h4 className="text-white mt-4">Error: <span className="text-danger">{error}</span>
+                                    </h4>}
                                 </div>
 
 

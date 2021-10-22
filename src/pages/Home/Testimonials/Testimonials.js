@@ -13,10 +13,10 @@ const Testimonials = () => {
     }, [])
     return (
         <>
-            <Container className="my-5">
-                <h6 className="m-2">Testimonials</h6>
-                <h2 className="mb-5">What Our Patient Say About Us</h2>
-                <Row xs={1} md={3} className=" g-5 mx-5 mt-5 ">
+            <Container className="my-4">
+                <h6 className="my-2 text-danger">Testimonials</h6>
+                <h2 className="mb-4 text-success">What Our Patient Say About Us</h2>
+                <Row xs={1} md={3} className=" gy-5 mt-5 ">
                     {testimonials.map(testimonial => <Testimonial
                         key={testimonial.id}
                         testimonial={testimonial}></Testimonial>)}

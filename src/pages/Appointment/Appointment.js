@@ -1,14 +1,15 @@
 import React from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import appointmentImg from '../../images/appointment/happy-doctor-holding-clipboard-with-patients.jpg'
+
+
 
 const Appointment = () => {
     return (
         <>
 
-            <Container className="">
+            <Container>
                 <Row>
-                    <Col lg={8}>
+                    <Col lg={7} md={7} sm={12}>
                         <h2 className="my-4">Make Appointment</h2>
                         <Form>
                             <Row className="">
@@ -26,7 +27,9 @@ const Appointment = () => {
                                 </Col>
                                 <Col lg={12} className="my-4">
 
-                                    <Form.Control className="py-5" type="text" placeholder="Your Problem" />
+                                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                        <Form.Control as="textarea" rows={4} placeholder="Your problem" />
+                                    </Form.Group>
                                 </Col>
                                 <Col lg={12}>
                                     <Button className='p-3 w-100 bg-info fs-3'>Submit</Button>
@@ -34,7 +37,9 @@ const Appointment = () => {
                             </Row>
                         </Form>
                     </Col>
-                    <Col lg={4}><img className="appointment w-100" src={appointmentImg} alt="" /></Col>
+                    <Col lg={5} md={5} sm={12}><img className=" mt-4 pt-5" src='https://i.ibb.co/T1Cmp1g/appt.jpg' alt="" />
+                    </Col>
+
                 </Row>
             </Container>
 

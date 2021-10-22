@@ -1,3 +1,7 @@
 .testimonial{
 border-radius:50%
 }
+.testimonial-card{
+    box-shadow: 10px 10px 15px lightgray;
+    border: none;
+}

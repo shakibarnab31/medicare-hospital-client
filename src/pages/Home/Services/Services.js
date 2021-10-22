@@ -12,9 +12,9 @@ const Services = () => {
     }, [])
     return (
         <>
-            <Container>
-                <h3 className="m-5">Medical Services</h3>
-                <Row xs={1} md={3} className=" g-5 mx-5 ">
+            <Container id="services">
+                <h2 className="my-5 text-primary">Medical Services</h2>
+                <Row xs={1} md={3} className=" gy-5">
                     {services.map(service => <Service
                         key={service.id}
                         service={service}></Service>)}

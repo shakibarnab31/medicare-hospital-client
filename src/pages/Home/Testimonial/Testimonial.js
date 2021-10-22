@@ -7,12 +7,12 @@ const Testimonial = (props) => {
     return (
         <div>
             <Col>
-                <Card>
+                <Card className="testimonial-card">
                     <div className="pt-3">
                         <Card.Img variant="top" src={img} className="testimonial w-50" />
                     </div>
                     <Card.Body >
-                        <Card.Title> <h4>{name}</h4> </Card.Title>
+                        <Card.Title> <h4 className="text-primary">{name}</h4> </Card.Title>
                         <Card.Text>
                             <p><small> {comment}</small></p>
                         </Card.Text>

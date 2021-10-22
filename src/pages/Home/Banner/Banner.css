@@ -1,0 +1,13 @@
+.banner{
+    background-image: url("../../../images/banner/banner\ \(1\).jpg");
+
+    background-size: cover;
+    background-position: center;
+    /* height: 600px; */
+    
+}
+.banner-title h1{
+    font-size: 65px;
+    font-weight: 700;
+    color:crimson;
+}

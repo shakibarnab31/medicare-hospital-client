@@ -9,7 +9,7 @@ import Welcome from '../Welcome/Welcome';
 
 const Home = () => {
     return (
-        <div>
+        <div id="home">
             < Banner ></Banner >
             <Welcome></Welcome>
             <Services></Services>

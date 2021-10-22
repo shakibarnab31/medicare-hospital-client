@@ -1,50 +1,23 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
-import banner1 from '../../../images/banner/banner (1).jpg'
-import banner2 from '../../../images/banner/banner (2).jpg'
-import banner3 from '../../../images/banner/banner (3).jpg'
+import { Carousel, Col, Container, Row } from 'react-bootstrap';
+
+import './Banner.css'
 
 const Banner = () => {
     return (
-        <>
-            <Carousel>
-                <Carousel.Item>
-                    <img
-                        className="d-block"
-                        src={banner1}
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block"
-                        src={banner2}
-                        alt="Second slide"
-                    />
+        <div className="banner">
+            <Container className="py-5" >
+                <Row className="py-5" >
+                    <Col></Col>
+                    <Col lg={6} sm={12} className="my-5 text-start banner-title ">
+                        <h1>MEDICARE</h1>
+                        <h1>Hospital Ltd</h1>
+                        <p>Our team of highly trained professionals uses the latest healing technologies to restore you to pain-free health quickly and easily. We thoroughly evaluate & treat all of the contributing root factors related to your issue.</p>
+                    </Col>
+                </Row>
+            </Container>
 
-                    <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={banner3}
-                        alt="Third slide"
-                    />
-
-                    <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
-        </>
+        </div >
     );
 };
 
