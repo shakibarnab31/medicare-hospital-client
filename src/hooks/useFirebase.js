@@ -8,6 +8,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState("")
     const [isLoading, setIsLoading] = useState(true)
+    
 
     const auth = getAuth();
 
@@ -30,7 +31,7 @@ const useFirebase = () => {
 
     const setUserDisplayName = (name) => {
         updateProfile(auth.currentUser, { displayName: name })
-            .then(() => { })
+            .then((result) => {})
             .catch(error => {
                 setError(error.message)
             })

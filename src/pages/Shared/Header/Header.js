@@ -6,9 +6,12 @@ import useFirebase from '../../../hooks/useFirebase';
 
 
 const Header = () => {
-    const { user, logOut } = useAuth();
+    const { user, logOut,setError } = useAuth();
     const handleLogOut = () => {
         logOut();
+        setError('')
+        
+
     }
     return (
         <>
@@ -26,9 +29,9 @@ const Header = () => {
                         {user.email ? <button onClick={handleLogOut}>Logout</button> :
                             <Nav.Link as={Link} to="/login">Login</Nav.Link>}
 
-                        <Navbar.Text>
+                        {user.email?<Navbar.Text>
                             Signed in as: <a href="#login">{user?.displayName}</a>
-                        </Navbar.Text>
+                        </Navbar.Text>:''}
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

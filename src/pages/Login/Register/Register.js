@@ -20,6 +20,8 @@ const Register = () => {
                 history.push(redirect_uri)
                 setUser(result.user)
                 setError('')
+                setUserDisplayName(name)
+                window.location.reload()
 
 
             })
@@ -28,7 +30,7 @@ const Register = () => {
             })
             .finally(() => setIsLoading(false))
 
-        setUserDisplayName(name)
+        
 
 
         e.target.reset()
@@ -47,14 +49,15 @@ const Register = () => {
         <div>
             <h3>Please Register</h3>
             <form onSubmit={handleRegistration} >
-                <input onBlur={handleName} type="name" name="name" id="" placeholder="enter name" />
+                <input onBlur={handleName} type="name" name="name" id="" placeholder="enter name" required />
                 <br />
-                <input onBlur={handleEmail} type="email" name="email" id="" placeholder="enter email" />
+                <input onBlur={handleEmail} type="email" name="email" id="" placeholder="enter email" required/>
                 <br />
-                <input onBlur={handlePassword} type="password" name="password" id="" placeholder="enter password" />
+                <input onBlur={handlePassword} type="password" name="password" id="" placeholder="enter password" required/>
                 <br />
                 <input type="submit" value="Register" />
-                <p className="text-danger">{error}</p>
+                <p>{error}</p>
+                
             </form>
         </div>
     );
