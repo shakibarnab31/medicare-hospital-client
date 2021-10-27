@@ -12,6 +12,7 @@ import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Appointment from './pages/Appointment/Appointment';
 import Doctors from './pages/Doctors/Doctors/Doctors';
 import Services from './pages/Home/Services/Services';
+import AboutUs from './pages/AboutUs/AboutUs';
 
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
             </Route>
             <Route path="/doctors">
               <Doctors></Doctors>
+            </Route>
+            <Route path="/about">
+              <AboutUs></AboutUs>
             </Route>
             <Route path="/labtest"></Route>
             <PrivateRoute path="/appointment">

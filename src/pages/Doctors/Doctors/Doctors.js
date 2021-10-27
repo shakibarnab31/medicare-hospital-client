@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import Footer from '../../Shared/Footer/Footer';
 import Doctor from '../Doctor/Doctor';
 import MedicalStuff from '../MedicalStuff/MedicalStuff';
 
@@ -30,6 +31,7 @@ const Doctors = () => {
                         medicalStuff={medicalStuff}></MedicalStuff>)}
                 </Row>
             </Container>
+            <Footer></Footer>
         </>
     );
 };
